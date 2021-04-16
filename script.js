@@ -43,15 +43,54 @@ function renderCurrentCategory(e) {
     currentActiveClass.classList.remove('active');
     currentActiveClass = e.target;
     currentActiveClass.className = 'filter-btn active';
+
+    let breakfast = userData.filter((item, category) => {
+		return item.category == 'breakfast';
+	});
+
+	let lunch = userData.filter((item, category) => {
+		return item.category == 'lunch';
+	});
+
+	let shakes = userData.filter((item, category) => {
+		return item.category == 'shakes';
+	});
+
+	let dinner = userData.filter((item, category) => {
+		return item.category == 'dinner';
+	});
+
+	// console.log(currentEvent.innerHTML);
+	// console.log(currentEvent.innerHTML.trim());
+	switch (currentEvent.innerHTML.trim()) {
+		case 'all':
+			renderMenu(userData);
+			break;
+		case 'breakfast':
+			data = breakfast;
+			// console.log(breakfast)
+			renderMenu(breakfast);
+			break;
+		case 'lunch':
+			data = lunch;
+            // console.log("lunch", data)
+            renderMenu(lunch);
+			break;
+		case 'shakes':
+			data = shakes;
+			renderMenu(shakes);
+			break;
+		case 'dinner':
+			data = dinner;
+			renderMenu(dinner);
+			console.log(dinner)
+			break;
+	}
 }
 //Search Functionality issue #4:
 const search = document.querySelector('.search');
-//const searchBtn = document.querySelector('.search-btn');
 search.addEventListener('keyup', function(){
     let searchValue = search.value;
-    // let newArr = userData.filter(item =>{ return
-    // item.title.includes(searchValue)
-    // })
     let newItem = userData.filter(
     (item) => item.title.toLowerCase().includes(searchValue.toLowerCase()) ||
     item.desc.toLowerCase().includes(searchValue.toLowerCase())
