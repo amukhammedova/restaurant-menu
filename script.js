@@ -32,3 +32,19 @@ function renderMenu(arr) {
             }
           
 }
+//Search Functionality issue #4:
+const search = document.querySelector('.search');
+//const searchBtn = document.querySelector('.search-btn');
+search.addEventListener('keyup', function(){
+    let searchValue = search.value;
+    // let newArr = userData.filter(item =>{ return
+    // item.title.includes(searchValue)
+    // })
+    let newItem = userData.filter(
+    (item) => item.title.toLowerCase().includes(searchValue.toLowerCase()) ||
+    item.desc.toLowerCase().includes(searchValue.toLowerCase())
+);
+    //console.log(newItem)
+    renderMenu(newItem)
+})
+//Search Functionality issue #4:
