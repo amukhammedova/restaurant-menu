@@ -262,6 +262,11 @@ Menu
     height: 150px;
   }
 }
+/* active */
+.active {
+	background-color: var(--clr-gold);
+	color: #fff;
+}
 /* Seach Functionality issue #4 */
 input{
   width: 1150px;

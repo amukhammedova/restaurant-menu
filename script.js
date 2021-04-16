@@ -2,6 +2,8 @@
 
 
 const section = document.querySelector('.section-center');
+let currentActiveClass = document.querySelector('.btn-container').children[0];
+currentActiveClass.classList.add('active');
 let userData;
 async function getData() {
 	const response = await fetch(
@@ -31,6 +33,16 @@ function renderMenu(arr) {
                         
             }
           
+}
+const all = document.querySelectorAll('.filter-btn');
+for (let i = 0; i < all.length; i++) {
+	all[i].addEventListener('click', renderCurrentCategory);
+}
+function renderCurrentCategory(e) {
+    let currentEvent = e.target;
+    currentActiveClass.classList.remove('active');
+    currentActiveClass = e.target;
+    currentActiveClass.className = 'filter-btn active';
 }
 //Search Functionality issue #4:
 const search = document.querySelector('.search');
