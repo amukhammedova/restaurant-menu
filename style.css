@@ -262,3 +262,23 @@ Menu
     height: 150px;
   }
 }
+/* Seach Functionality issue #4 */
+input{
+  width: 1150px;
+  height: 30px;
+  margin-left:210px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border-color: #c59d5f;
+}
+.search-btn{
+  width: 80px;
+  height:30px;
+  border-radius: 5px;
+  border-color: #c59d5f;
+}
+.search-btn:hover{
+  background-color: #c59d5f;
+  color:white;
+}
+/* Seach Functionality issue #4 */
