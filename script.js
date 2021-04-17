@@ -99,3 +99,25 @@ search.addEventListener('keyup', function(){
     renderMenu(newItem)
 })
 //Search Functionality issue #4:
+let minprice = document.querySelector('.min');
+let maxprice = document.querySelector('.max');
+const submitPrice = document.querySelector('.minmaxxbtn')
+
+
+submitPrice.addEventListener('click', function(){
+    let maxpr = Number(maxprice.value)
+    let minpr = Number(minprice.value)
+    // if(!Number(maxpr) || !Number(minpr)){
+    //     return alert('Plese enter number ')
+    // }
+    const newArr = userData.filter((item) => {
+        if(item.price < maxpr && item.price > minpr){
+            return item 
+        }else if (item.price>minpr && maxpr == ''){
+return item 
+        }
+    })
+    maxprice.value = ''
+    minprice.value = ''
+    renderMenu(newArr)
+})
