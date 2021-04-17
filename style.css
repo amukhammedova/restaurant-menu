@@ -264,9 +264,9 @@ Menu
 }
 /* Seach Functionality issue #4 */
 input{
-  width: 1150px;
+  width: 500px;
   height: 30px;
-  margin-left:210px;
+  margin-left:230px;
   margin-bottom: 20px;
   border-radius: 5px;
   border-color: #c59d5f;
